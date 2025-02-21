@@ -1,5 +1,5 @@
  -- Criação de Tabelas
- 
+
  --  Usuario (Jhuly)
 
 
@@ -25,6 +25,12 @@
 
 
 -- Calendário (Zoraina)
+CREATE TABLE CALENDAR
+    id INT,
+    tarefaid INT,
+    dataevento DATE
+);
+
 
 
 -- Notificação (Zoraina)
