@@ -1,8 +1,11 @@
  -- Criação de Tabelas
 
  --  Usuario (Jhuly)
-
-
+    CREATE TABLE Usuario
+    usuarioId SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,     
+    email VARCHAR(150) UNIQUE NOT NULL, 
+    senha VARCHAR(255) NOT NULL,
  --  Pomodoro(Jhuly)
 
 
@@ -30,6 +33,7 @@ CREATE TABLE CALENDAR
     tarefaid INT,
     dataevento DATE
 );
+
 
 
 
