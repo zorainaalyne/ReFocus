@@ -28,7 +28,15 @@ CREATE TABLE ModoFoco (
 );
 
 -- Cliente(Edsandro) 
+<<<<<<< Updated upstream
 
+=======
+create table Cliente (
+    id serial primary key,
+    nivelcliente int not null check (nivelcliente>=1),
+    status boolean default true
+);
+>>>>>>> Stashed changes
 
 -- Calendário (Zoraina)
 
