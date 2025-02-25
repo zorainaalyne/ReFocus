@@ -1,11 +1,12 @@
  -- Criação de Tabelas
 
  --  Usuario (Jhuly)
-    CREATE TABLE Usuario
-    usuarioId SERIAL PRIMARY KEY,
+     CREATE TABLE Usuario
+    id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,     
     email VARCHAR(150) UNIQUE NOT NULL, 
     senha VARCHAR(255) NOT NULL,
+
  --  Pomodoro(Jhuly)
 
 
