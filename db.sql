@@ -22,15 +22,20 @@
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 
  -- AUTH (Jander)
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,           
-    email VARCHAR(255) NOT NULL UNIQUE,          
-    password_hash VARCHAR(255) NOT NULL,       
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
-    status ENUM('active', 'inactive', 'suspended') DEFAULT 'active' 
-);
+
 
  -- Lista de Tarefas (Jander)
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,             
+    title VARCHAR(255) NOT NULL,                   
+    description TEXT,                                  
+    due_date DATETIME,                             
+    status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',  
+    priority ENUM('low', 'medium', 'high') DEFAULT 'medium',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP 
+);
+
 
 
 -- Gamificação (Vinicius)
