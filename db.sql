@@ -14,6 +14,18 @@
 
 -- Gamificação (Vinicius)
 
+CREATE TABLE gamificacao (
+    id_gamifica CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    usuario_id INT NOT NULL,
+    nivel INT DEFAULT 1,
+    pontos INT DEFAULT 0,
+    badges VARCHAR(255),
+    desafios_concluidos INT DEFAULT 0,
+    data_ultima_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+
 
 -- Tarefa (Vinicius)
 
