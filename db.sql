@@ -57,13 +57,15 @@ CREATE TABLE Tarefa (
 
 
 -- Modo Foco (Edsandro)
+CREATE TABLE ModoFoco (
+    id SERIAL PRIMARY KEY,
+    usuarioId INTEGER NOT NULL,
+    ativo BOOLEAN DEFAULT FALSE,
+    tempoAtivo INTERVAL DEFAULT '00:00:00',
+    FOREIGN KEY (usuarioId) REFERENCES Usuario(id) ON DELETE CASCADE
+);
 
-
--- Cliente(Edsandro)
-
-
--- Calendário (Zoraina)
-
+-- Cliente(Edsandro) 
 
 
 -- Notificação (Zoraina)
