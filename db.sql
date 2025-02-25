@@ -67,6 +67,10 @@ CREATE TABLE ModoFoco (
 
 -- Cliente(Edsandro) 
 
+-- Calendário (Zoraina)
+
+
+
 
 -- Notificação (Zoraina)
 CREATE TABLE notificacao (
