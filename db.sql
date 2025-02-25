@@ -27,7 +27,7 @@ CREATE TABLE ModoFoco (
     FOREIGN KEY (usuarioId) REFERENCES Usuario(id) ON DELETE CASCADE
 );
 
--- Cliente(Edsandro)
+-- Cliente(Edsandro) 
 
 
 -- Calendário (Zoraina)
