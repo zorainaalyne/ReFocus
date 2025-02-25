@@ -34,11 +34,6 @@
 
 
 -- Calendário (Zoraina)
-CREATE TABLE CALENDAR
-    id INT,
-    tarefaid INT,
-    dataevento DATE
-);
 
 
 
