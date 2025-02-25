@@ -25,7 +25,7 @@
 
 
  -- Lista de Tarefas (Jander)
-CREATE TABLE IF NOT EXISTS tasks (
+    CREATE TABLE IF NOT EXISTS tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,             
     title VARCHAR(255) NOT NULL,                   
     description TEXT,                                  
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 -- Gamificação (Vinicius)
 
-CREATE TABLE gamificacao (
+    CREATE TABLE gamificacao (
     id_gamifica CHAR(36) PRIMARY KEY DEFAULT (UUID()),
     usuario_id INT NOT NULL,
     nivel INT DEFAULT 1,
@@ -55,7 +55,7 @@ CREATE TABLE gamificacao (
 
 -- Tarefa (Vinicius)
 
-CREATE TABLE Tarefa (
+    CREATE TABLE Tarefa (
     id INT AUTO_INCREMENT PRIMARY KEY,  
     nome VARCHAR(255) NOT NULL,        
     descricao TEXT,                    
@@ -68,6 +68,13 @@ CREATE TABLE Tarefa (
 
 
 -- Modo Foco (Edsandro)
+    CREATE TABLE ModoFoco (
+    id SERIAL PRIMARY KEY,
+    usuarioId INTEGER NOT NULL,
+    ativo BOOLEAN DEFAULT FALSE,
+    tempoAtivo INTERVAL DEFAULT '00:00:00',
+    FOREIGN KEY (usuarioId) REFERENCES Usuario(id) ON DELETE CASCADE
+);
 
 -- Cliente(Edsandro) 
 
@@ -77,7 +84,7 @@ CREATE TABLE Tarefa (
 
 
 -- Notificação (Zoraina)
-CREATE TABLE notificacao (
+    CREATE TABLE notificacao (
     id INT AUTO_INCREMENT PRIMARY KEY,         
     usuario_id INT,                            
     tipo_notificacao ENUM('lembrete', 'alerta', 'mensagem', 'erro', 'sucesso') NOT NULL, 
