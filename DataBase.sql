@@ -1,4 +1,3 @@
-CREATE DATABASE REFOCUS;
 USE REFOCUS;
 CREATE TABLE Usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -78,3 +77,8 @@ CREATE TABLE notificacao (
     FOREIGN KEY (tarefa_id) REFERENCES Tarefa(id),
     FOREIGN KEY (calendario_id) REFERENCES calendario(id)
 );
+
+
+
+
+
