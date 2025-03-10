@@ -1,0 +1,10 @@
+node_modules
+apirefocu/HELP.md
+apirefocu/target/
+!apirefocu/gradle/wrapper/gradle-wrapper.jar
+!apirefocu/**/src/main/**/build/
+!apirefocu/**/src/test/**/build/
+
+
+### VS Code ###
+.vscode/
