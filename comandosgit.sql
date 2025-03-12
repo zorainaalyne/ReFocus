@@ -1,0 +1,14 @@
+--| Copiar repositorio para o computador 
+--$ git clone -c "core.sshCommand=ssh -i ~/.ssh/[sua chave]" git@[seu repositorio] 
+--| Atualizar repositorio no pc com a nuvem
+--$ git pull 
+--| Trocar de branch criando uma nova branch 
+--$ git checkout -b [nome da branch] 
+--| Apenas trocar para outra branch 
+--$ git checkout [nome da branch] 
+--| Adicionar arquivo modificado 
+--$ git add [arquivo modificado] 
+--| Gerar registro de envio 
+--$ git commit -m "[mensagem de envio]" 
+--| Enviar para o servidor 
+--$ git push origin [branch atual]
