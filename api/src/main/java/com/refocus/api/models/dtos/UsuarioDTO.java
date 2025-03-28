@@ -1,4 +1,4 @@
-package main.java.com.refocus.api.models.dtos;
+package com.refocus.api.models.dtos;
 
 public class UsuarioDTO { 
     private Long id;

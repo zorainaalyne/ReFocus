@@ -1,4 +1,4 @@
-package main.java.com.refocus.api.models.dtos;
+package com.refocus.api.models.dtos;
 
 import java.time.LocalDateTime;
 
