@@ -1,3 +1,26 @@
+package main.java.com.refocus.api.models.entitys;
+
+import java.util.Calendar;
+import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
 @Entity
 @Table(name = "notificacao")
 public class Notificacao {
@@ -8,7 +31,7 @@ public class Notificacao {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    private UsuarioEntity usuario;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_notificacao", nullable = false, columnDefinition = "ENUM('lembrete', 'alerta', 'mensagem', 'erro', 'sucesso')")
@@ -35,7 +58,7 @@ public class Notificacao {
 
     @ManyToOne
     @JoinColumn(name = "calendario_id")
-    private Calendario calendario;
+    private Calendar calendario;
 
     public enum TipoNotificacao {
         LEMBRETE, ALERTA, MENSAGEM, ERRO, SUCESSO

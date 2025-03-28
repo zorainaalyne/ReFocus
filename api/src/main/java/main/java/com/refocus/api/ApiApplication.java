@@ -1,4 +1,4 @@
-package com.refocus.api;
+package main.java.com.refocus.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

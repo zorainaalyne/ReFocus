@@ -2,8 +2,12 @@ package main.java.com.refocus.api.models.entitys;
 
 import java.io.Serializable;
 
-import jacarta.persistence.Entity;
-import jacarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,10 +19,8 @@ import lombok.Setter;
 @Table(name = "usuario")
 public class UsuarioEntity implements Serializable{
 
-    private static final Long serialVersionUID = 1L;
-
     @Id
-    @GeneratedValue(strategy = jacarta.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome", nullable = false, length = 160)
@@ -27,6 +29,6 @@ public class UsuarioEntity implements Serializable{
     @Column(name = "email", nullable = false, length = 160)
     private String email;
 
-    @Column(name = "senha", nullable = false, lenght = 160)
+    @Column(name = "senha", nullable = false, length = 160)
     private String senha;
 }
