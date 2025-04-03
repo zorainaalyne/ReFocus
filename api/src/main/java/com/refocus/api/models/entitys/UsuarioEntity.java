@@ -2,6 +2,8 @@ package com.refocus.api.models.entitys;
 
 import java.io.Serializable;
 
+import com.refocus.api.models.dtos.UsuarioDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,10 @@ import lombok.Setter;
 @Entity
 @Table(name = "usuario")
 public class UsuarioEntity implements Serializable{
+
+    public UsuarioEntity(UsuarioDTO user) {
+        //TODO Auto-generated constructor stub
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
