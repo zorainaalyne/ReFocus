@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.refocus.api.models.entitys.Calendario;
+import com.refocus.api.models.entitys.CalendarioEntity;
 import com.refocus.api.models.repositorys.CalendarioRepository;
 
 @Service
@@ -27,8 +27,8 @@ public class calendarioservices {
     }
 
     private static CalendarioEntity save(CalendarioRepository calendariorepo2) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+
+        throw new UnsupportedOperationException("Metodo não Implementado 'salve'");
     }
 
     /**
@@ -36,7 +36,7 @@ public class calendarioservices {
      * 
      * @return Lista de registros do calendário.
      */
-    public List<Calendario> findAllCalendarios() {
+    public List<CalendarioEntity> findAllCalendarios() {
         return calendariorepo.findAll();
     }
 
@@ -46,7 +46,7 @@ public class calendarioservices {
      * @param id ID do registro.
      * @return Optional contendo o registro, se encontrado.
      */
-    public Optional<Calendario> findCalendarioById(Long id) {
+    public Optional<CalendarioEntity> findCalendarioById(Long id) {
         return calendariorepo.findById(id);
     }
 

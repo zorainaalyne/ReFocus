@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.refocus.api.models.entitys.Tarefa;
+import com.refocus.api.models.entitys.TarefaEntity;
 
 @Repository
-public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
-    List<Tarefa> findByStatus(String status);
+public interface TarefaRepository extends JpaRepository<TarefaEntity, Long> {
+    List<TarefaEntity> findByStatus(String status);
 }

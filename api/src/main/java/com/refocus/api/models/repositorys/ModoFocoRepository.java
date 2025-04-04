@@ -5,9 +5,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.refocus.api.models.entitys.ModoFoco;
+import com.refocus.api.models.entitys.ModoFocoEntity;
 
 @Repository
-public interface ModoFocoRepository extends JpaRepository<ModoFoco, Long> {
-    Optional<ModoFoco> findByUsuarioId(Long usuarioId);
+public interface ModoFocoRepository extends JpaRepository<ModoFocoEntity, Long> {
+    Optional<ModoFocoEntity> findByUsuarioId(Long usuarioId);
 }

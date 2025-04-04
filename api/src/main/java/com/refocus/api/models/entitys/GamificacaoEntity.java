@@ -20,7 +20,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "gamificacao")
-public class Gamificacao {
+public class GamificacaoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

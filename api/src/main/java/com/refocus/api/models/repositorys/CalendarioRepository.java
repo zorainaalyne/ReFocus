@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.refocus.api.models.entitys.Calendario;
-import com.refocus.api.services.CalendarioEntity;
+import com.refocus.api.models.entitys.CalendarioEntity;
+import com.refocus.api.services.calendarioservices;
 
 @Repository
-public interface CalendarioRepository extends JpaRepository<Calendario, Long> {
-    List<Calendario> findByUsuarioId(Long usuarioId);
-    List<Calendario> findByStatus(String status);
-    CalendarioEntity save(CalendarioEntity calendario);
+public interface CalendarioRepository extends JpaRepository<CalendarioEntity, Long> {
+    List<CalendarioEntity> findByUsuarioId(Long usuarioId);
+    List<CalendarioEntity> findByStatus(String status);
+    calendarioservices save(calendarioservices calendario);
 }

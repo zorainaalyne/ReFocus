@@ -1,6 +1,5 @@
 package com.refocus.api.models.entitys;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -22,8 +21,8 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "notificacao")
-public class Notificacao {
+@Table(name = "calendario")
+public class CalendarioEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,39 +32,41 @@ public class Notificacao {
     @JoinColumn(name = "usuario_id")
     private UsuarioEntity usuario;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_notificacao", nullable = false, columnDefinition = "ENUM('lembrete', 'alerta', 'mensagem', 'erro', 'sucesso')")
-    private TipoNotificacao tipoNotificacao;
-
-    @Column(name = "mensagem", columnDefinition = "TEXT", nullable = false)
-    private String mensagem;
-
-    @Column(name = "data_criacao", updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-
-    @Column(name = "data_visualizada")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataVisualizada;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", columnDefinition = "ENUM('pendente', 'lida', 'ignorada')")
-    private Status status;
-
     @ManyToOne
     @JoinColumn(name = "tarefa_id")
-    private Tarefa tarefa;
+    private TarefaEntity tarefa;
 
-    @ManyToOne
-    @JoinColumn(name = "calendario_id")
-    private Calendar calendario;
+    @Column(name = "titulo", nullable = false, length = 255)
+    private String titulo;
 
-    public enum TipoNotificacao {
-        LEMBRETE, ALERTA, MENSAGEM, ERRO, SUCESSO
-    }
+    @Column(name = "descricao", columnDefinition = "TEXT")
+    private String descricao;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_inicio")
+    private Date dataInicio;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_fim")
+    private Date dataFim;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", columnDefinition = "ENUM('pendente', 'confirmado', 'concluído', 'cancelado')")
+    private Status status;
+
+    @Column(name = "lembrete", nullable = false)
+    private Boolean lembrete;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_evento", columnDefinition = "ENUM('reunião', 'prazo', 'descanso', 'outro')")
+    private TipoEvento tipoEvento;
 
     public enum Status {
-        PENDENTE, LIDA, IGNORADA
+        PENDENTE, CONFIRMADO, CONCLUIDO, CANCELADO
+    }
+
+    public enum TipoEvento {
+        REUNIAO, PRAZO, DESCANSO, OUTRO
     }
 
     // Getters and Setters

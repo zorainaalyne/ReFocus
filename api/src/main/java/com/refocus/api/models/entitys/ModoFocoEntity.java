@@ -16,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "ModoFoco")
-public class ModoFoco {
+public class ModoFocoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

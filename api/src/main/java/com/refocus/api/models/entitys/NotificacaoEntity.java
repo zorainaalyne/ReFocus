@@ -1,5 +1,6 @@
 package com.refocus.api.models.entitys;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -21,43 +22,51 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "Pomodoro")
-public class Pomodoro {
+@Table(name = "notificacao")
+public class NotificacaoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "tarefa_id")
-    private Tarefa tarefa;
-
-    @ManyToOne
     @JoinColumn(name = "usuario_id")
     private UsuarioEntity usuario;
 
-    @Column(name = "duracao", nullable = false)
-    private Integer duracao;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_notificacao", nullable = false, columnDefinition = "ENUM('lembrete', 'alerta', 'mensagem', 'erro', 'sucesso')")
+    private TipoNotificacao tipoNotificacao;
 
-    @Column(name = "tempo_iniciado")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date tempoIniciado;
+    @Column(name = "mensagem", columnDefinition = "TEXT", nullable = false)
+    private String mensagem;
 
-    @Column(name = "tempo_terminado")
+    @Column(name = "data_criacao", updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date tempoTerminado;
+    private Date dataCriacao;
+
+    @Column(name = "data_visualizada")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataVisualizada;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", columnDefinition = "ENUM('em andamento', 'finalizado', 'pausado')")
+    @Column(name = "status", columnDefinition = "ENUM('pendente', 'lida', 'ignorada')")
     private Status status;
 
-    @Column(name = "intervalo_longo", nullable = false)
-    private Integer intervaloLongo;
+    @ManyToOne
+    @JoinColumn(name = "tarefa_id")
+    private TarefaEntity tarefa;
+
+    @ManyToOne
+    @JoinColumn(name = "calendario_id")
+    private Calendar calendario;
+
+    public enum TipoNotificacao {
+        LEMBRETE, ALERTA, MENSAGEM, ERRO, SUCESSO
+    }
 
     public enum Status {
-        EM_ANDAMENTO, FINALIZADO, PAUSADO
+        PENDENTE, LIDA, IGNORADA
     }
 
     // Getters and Setters
 }
-

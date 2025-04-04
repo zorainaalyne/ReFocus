@@ -22,7 +22,7 @@ import lombok.Setter;
 public class UsuarioEntity implements Serializable{
 
     public UsuarioEntity(UsuarioDTO user) {
-        //TODO Auto-generated constructor stub
+
     }
 
     @Id
