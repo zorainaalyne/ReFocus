@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 -- Tabela Gamificação
 CREATE TABLE gamificacao (
-    id_gamifica CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    id_gamifica INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
     nivel INT DEFAULT 1,
     pontos INT DEFAULT 0,

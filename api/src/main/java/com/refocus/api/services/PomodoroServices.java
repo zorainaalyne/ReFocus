@@ -72,4 +72,19 @@ public class PomodoroServices {
             throw new IllegalArgumentException("Registro de pomodoro com o ID fornecido não existe.");
         }
     }
+
+    public List<PomodoroEntity> getAllPomodoros() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllPomodoros'");
+    }
+
+    public PomodoroEntity getPomodoroById(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPomodoroById'");
+    }
+
+    public void deletePomodoro(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deletePomodoro'");
+    }
 }

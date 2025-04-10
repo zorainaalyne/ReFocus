@@ -1,6 +1,5 @@
 package com.refocus.api.models.entitys;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -58,7 +57,7 @@ public class NotificacaoEntity {
 
     @ManyToOne
     @JoinColumn(name = "calendario_id")
-    private Calendar calendario;
+    private CalendarioEntity calendario;
 
     public enum TipoNotificacao {
         LEMBRETE, ALERTA, MENSAGEM, ERRO, SUCESSO

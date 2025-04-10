@@ -72,4 +72,14 @@ public class TarefaServices {
             throw new IllegalArgumentException("Tarefa com o ID fornecido não existe.");
         }
     }
+
+    public TarefaEntity getTarefaById(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTarefaById'");
+    }
+
+    public void deleteTarefa(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteTarefa'");
+    }
 }
