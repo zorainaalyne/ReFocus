@@ -47,17 +47,12 @@ public class PomodoroEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date tempoTerminado;
 
-    @Enumerated(EnumType.STRING)
+    
     @Column(name = "status", columnDefinition = "ENUM('em andamento', 'finalizado', 'pausado')")
-    private Status status;
+    private String status;
 
     @Column(name = "intervalo_longo", nullable = false)
     private Integer intervaloLongo;
-
-    public enum Status {
-        EM_ANDAMENTO, FINALIZADO, PAUSADO
-    }
-
     // Getters and Setters
 }
 
