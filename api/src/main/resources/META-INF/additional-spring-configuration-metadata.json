@@ -1,0 +1,52 @@
+{"properties": [
+  {
+    "name": "swagger.api.title",
+    "type": "java.lang.String",
+    "description": "A description for 'swagger.api.title'"
+  },
+  {
+    "name": "cors.allowed.origins",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.allowed.origins'"
+  },
+  {
+    "name": "security.oauth2.client.client-id",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.client-id'"
+  },
+  {
+    "name": "security.oauth2.client.access-token-uri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.access-token-uri'"
+  },
+  {
+    "name": "security.oauth2.client.client-secret",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.client-secret'"
+  },
+  {
+    "name": "security.oauth2.client.scope",
+    "type": "java.lang.String",
+    "description": "A description for 'security.oauth2.client.scope'"
+  },
+  {
+    "name": "cors.max.age",
+    "type": "java.lang.String",
+    "description": "A description for 'cors.max.age'"
+  },
+  {
+    "name": "swagger.api.description",
+    "type": "java.lang.String",
+    "description": "A description for 'swagger.api.description'"
+  },
+  {
+    "name": "swagger.api.version",
+    "type": "java.lang.String",
+    "description": "A description for 'swagger.api.version'"
+  },
+  {
+    "name": "swagger.api.contact.email",
+    "type": "java.lang.String",
+    "description": "A description for 'swagger.api.contact.email'"
+  }
+]}
