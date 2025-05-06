@@ -4,6 +4,8 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -45,12 +47,12 @@ public class PomodoroEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date tempoTerminado;
 
-    
-    @Column(name = "status", columnDefinition = "ENUM('em andamento', 'finalizado', 'pausado')")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
 
     @Column(name = "intervalo_longo", nullable = false)
     private Integer intervaloLongo;
-    // Getters and Setters
+  
 }
 
