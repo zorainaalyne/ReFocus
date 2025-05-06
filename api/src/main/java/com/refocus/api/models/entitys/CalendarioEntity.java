@@ -51,23 +51,14 @@ public class CalendarioEntity {
     private Date dataFim;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", columnDefinition = "ENUM('pendente', 'confirmado', 'concluído', 'cancelado')")
+    @Column(name = "status")
     private Status status;
 
     @Column(name = "lembrete", nullable = false)
     private Boolean lembrete;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_evento", columnDefinition = "ENUM('reunião', 'prazo', 'descanso', 'outro')")
+    @Column(name = "tipo_evento")
     private TipoEvento tipoEvento;
-
-    public enum Status {
-        PENDENTE, CONFIRMADO, CONCLUIDO, CANCELADO
-    }
-
-    public enum TipoEvento {
-        REUNIAO, PRAZO, DESCANSO, OUTRO
-    }
-
     // Getters and Setters
 }
