@@ -33,7 +33,7 @@ public class NotificacaoEntity {
     private UsuarioEntity usuario;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_notificacao", nullable = false, columnDefinition = "ENUM('lembrete', 'alerta', 'mensagem', 'erro', 'sucesso')")
+    @Column(name = "tipo_notificacao") 
     private TipoNotificacao tipoNotificacao;
 
     @Column(name = "mensagem", columnDefinition = "TEXT", nullable = false)
@@ -48,7 +48,7 @@ public class NotificacaoEntity {
     private Date dataVisualizada;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", columnDefinition = "ENUM('pendente', 'lida', 'ignorada')")
+    @Column(name = "status")
     private Status status;
 
     @ManyToOne
@@ -59,13 +59,4 @@ public class NotificacaoEntity {
     @JoinColumn(name = "calendario_id")
     private CalendarioEntity calendario;
 
-    public enum TipoNotificacao {
-        LEMBRETE, ALERTA, MENSAGEM, ERRO, SUCESSO
-    }
-
-    public enum Status {
-        PENDENTE, LIDA, IGNORADA
-    }
-
-    // Getters and Setters
 }
