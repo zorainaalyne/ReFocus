@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException; // Importar User do Spring Security
-import org.springframework.security.crypto.password.PasswordEncoder; // Importar UserDetails
-import org.springframework.stereotype.Service; // Importar UserDetailsService
+import org.springframework.security.core.userdetails.UsernameNotFoundException; 
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service; 
 
-import com.refocus.api.models.dtos.AuthRequest; // Importar UsernameNotFoundException
+import com.refocus.api.models.dtos.AuthRequest;
 import com.refocus.api.models.dtos.AuthResponse;
 import com.refocus.api.models.entitys.UsuarioEntity;
-import com.refocus.api.models.repositorys.UsuarioRepository; // Ou outra coleção apropriada para authorities
+import com.refocus.api.models.repositorys.UsuarioRepository;
 
 @Service
 public class AuthService implements UserDetailsService { // Implementa UserDetailsService
