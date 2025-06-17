@@ -1,24 +1,28 @@
 package com.refocus.api.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+import java.util.ArrayList;
 
-import com.refocus.api.models.dtos.AuthRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException; // Importar User do Spring Security
+import org.springframework.security.crypto.password.PasswordEncoder; // Importar UserDetails
+import org.springframework.stereotype.Service; // Importar UserDetailsService
+
+import com.refocus.api.models.dtos.AuthRequest; // Importar UsernameNotFoundException
 import com.refocus.api.models.dtos.AuthResponse;
 import com.refocus.api.models.entitys.UsuarioEntity;
-import com.refocus.api.models.repositorys.UsuarioRepository;
+import com.refocus.api.models.repositorys.UsuarioRepository; // Ou outra coleção apropriada para authorities
 
-@SuppressWarnings("unused")
 @Service
-public class AuthService {
+public class AuthService implements UserDetailsService { // Implementa UserDetailsService
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
 
     public void register(AuthRequest authRequest) {
         UsuarioEntity usuario = new UsuarioEntity(null);
@@ -28,17 +32,23 @@ public class AuthService {
         usuarioRepository.save(usuario);
     }
 
-
     public AuthResponse authenticate(AuthRequest authRequest) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'authenticate'");
+        // TODO: Implementar a lógica de autenticação real aqui, possivelmente usando AuthenticationManager
+        throw new UnsupportedOperationException("Método não implementado 'authenticate'");
     }
-
 
     public AuthResponse refreshToken(String refreshToken) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'refreshToken'");
+        // TODO: Implementar a lógica de refresh token
+        throw new UnsupportedOperationException("Método não implementado 'refreshToken'");
     }
 
-    
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        UsuarioEntity usuario = usuarioRepository.findByEmail(email); // Usa seu método de repositório existente
+        if (usuario == null) {
+            throw new UsernameNotFoundException("Usuário não encontrado com o email: " + email);
+        }
+        // Constrói o objeto UserDetails do Spring Security
+        return new User(usuario.getEmail(), usuario.getSenha(), new ArrayList<>()); // Substitua ArrayList por papéis/autoridades reais, se tiver
     }
+}
